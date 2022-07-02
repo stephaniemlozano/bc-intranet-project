@@ -1,19 +1,20 @@
-const restaurantList = document.querySelector('.restaurant-data')
+const restaurantList = document.getElementById('restaurants')
 
 fetch('http://localhost:4002/')
     .then(response => response.json())
-    .then(restaurantList => {
+    .then(restaurants => {
         let html = ''
-        restaurantList.forEach(restaurant => {
+        restaurants.forEach(restaurant => {
             let htmlData = 
-            `<div class="restaurant-data"></div>
-            <img src="${restaurant.photoUrl}">
+            `<img src="${restaurant.photoUrl}">
             <h3>${restaurant.name}</h3>
             <h4>Rating: ${restaurant.rating}/h4>
             <p>${restaurant.address}</p>`
 
         html += htmlData
-        });
+    });
+        // console.log(html)
+        // console.log(restaurantList.innerHTML)
         restaurantList.innerHTML = html
     })
 
