@@ -1,6 +1,3 @@
-// create JSON file in local API with all restuarants
-// fetch local API and render restaurant list here
-
 const restaurantList = document.querySelector('.restaurant-data')
 
 fetch('http://localhost:4002/')
